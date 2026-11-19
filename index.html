@@ -22,7 +22,7 @@ h1{font-size:clamp(40px,9vw,92px);line-height:.95;font-weight:900;font-style:ita
 h1 span{display:inline-block;background:var(--y);color:#0a0f24;padding:0 16px;transform:rotate(-1.5deg)}
 .lead{color:var(--m);font-size:clamp(17px,2.4vw,22px);max-width:680px;margin:14px auto}
 .vsl{max-width:880px;margin:26px auto;aspect-ratio:16/9;border-radius:22px;border:1px solid var(--line);background:linear-gradient(135deg,#0b1a4a,#050b1e);overflow:hidden;position:relative;box-shadow:0 0 90px #2a5bff44}
-.vsl iframe{width:100%;height:100%;border:0}.ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--m);padding:20px}
+.vsl.v{aspect-ratio:9/16;max-width:380px}.vsl iframe{width:100%;height:100%;border:0}.ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--m);padding:20px}
 .play{width:84px;height:84px;border-radius:50%;background:var(--y);display:grid;place-items:center;margin:0 auto 12px;box-shadow:0 0 44px #ffc80099}
 .play:after{content:"";border-left:26px solid #0a0f24;border-top:16px solid transparent;border-bottom:16px solid transparent;margin-left:8px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:50px 0}
@@ -81,8 +81,9 @@ footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--m);font-
 <p class="note" style="text-align:center">Participantes que autorizaram a divulgação do primeiro nome e da cidade.</p></section>
 <footer>Conteúdo educacional. Não é recomendação de investimento nem promessa de resultado. Cada aluno opera a própria conta, sem acesso a senhas ou recursos de terceiros. Operar no mercado financeiro envolve risco de perda do capital.<br>Seus dados são usados apenas para avaliar a sua candidatura (LGPD).</footer></div>
 <script>
-const CFG={VSL_ID:'',FORM_ENDPOINT:'',WHATS:'https://chat.whatsapp.com/JLIcOLGn4I9G5F2bhJT67q',OUTROS:'https://joeltraderfx.github.io/desfrute/'};
+const CFG={VSL_ID:'n9chaS5D964',VSL_VERTICAL:true,FORM_ENDPOINT:'',WHATS:'https://chat.whatsapp.com/JLIcOLGn4I9G5F2bhJT67q',OUTROS:'https://joeltraderfx.github.io/desfrute/'};
 const CONFIRMADOS=[]; /* só nomes reais e autorizados: {nome:'Carlos',cidade:'Recife/PE'} */
+if(CFG.VSL_VERTICAL)document.getElementById('vsl').classList.add('v');
 if(CFG.VSL_ID)document.getElementById('vsl').innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+CFG.VSL_ID+'?rel=0" allow="autoplay;encrypted-media;fullscreen" allowfullscreen></iframe>';
 if(CONFIRMADOS.length){document.getElementById('ag').hidden=false;document.getElementById('agl').innerHTML=CONFIRMADOS.map(p=>'<li class="card"><b>'+esc(p.nome)+'</b><span>'+esc(p.cidade)+'</span></li>').join('')}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
