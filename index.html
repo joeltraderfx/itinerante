@@ -97,8 +97,8 @@ const Q=[
 {k:'hotel',t:'Qual o hotel mais próximo da sua localização?',text:1,ph:'Nome do hotel e bairro'},
 {k:'reserva',t:'Você tem condições de reservar esse hotel por 7 dias e enviar o comprovante de pagamento?',o:SN},
 {k:'conta',t:'Para as aulas, você abrirá a conta no seu nome, com a minha orientação. Você está de acordo?',o:['Sim, estou de acordo','Não']},
-{k:'capital',t:'O valor mínimo de capital próprio para manter na sua conta, em seu nome, durante as aulas é de R$ 100.000. Você dispõe desse recurso?',o:SN},
-{k:'honor',t:'O valor para contratar o profissional é de 10% desse valor (R$ 10.000). Se for aprovado, você tem condições de contratar agora?',o:SN},
+{k:'capital',t:'Quanto de capital próprio você consegue manter na sua conta, em seu nome, durante as aulas? O ideal é R$ 100.000, mas aceitamos a partir de R$ 20.000.',o:['R$ 100.000 ou mais','R$ 75.000','R$ 50.000','R$ 20.000','Menos de R$ 20.000']},
+{k:'honor',t:'O valor da mentoria presencial de 7 dias é de R$ 25.000. Se for aprovado, você tem condições de contratar agora?',o:SN},
 {k:'grupo',t:'A aula é individual. Grupos com 3 ou mais pessoas têm 10% de desconto. Como pretende participar?',o:['Sozinho(a)','Em grupo de 3 ou mais pessoas']},
 {k:'modelo',t:'Não há divisão de lucros nem promessa de ganho: você opera a sua conta e os resultados, bons ou ruins, são seus. Você está de acordo?',o:['Sim, estou de acordo','Não']},
 {k:'reacao',t:'O mercado financeiro é de alto risco. Se houver perdas, como você reagiria?',o:['Entendo que faz parte e sigo o meu plano de risco','Ficaria muito abalado(a)']},
@@ -120,7 +120,7 @@ async function fin(){
  const g=id=>document.getElementById(id),d={nome:g('nm').value.trim(),telefone:g('tl').value.trim(),email:g('em').value.trim(),cidade:g('ci').value.trim()};
  if(d.nome.length<5||d.telefone.replace(/\D/g,'').length<10||!/^\S+@\S+\.\S+$/.test(d.email)||d.cidade.length<2||!g('lg').checked){g('er').textContent='Preencha todos os campos corretamente e aceite o compartilhamento de dados.';return}
  g('fin').disabled=true;g('fin').textContent='Enviando...';
- const ok=A.renda!==RENDA[0]&&A.reserva==='Sim'&&A.capital==='Sim'&&A.honor==='Sim'&&A.conta!=='Não'&&A.modelo!=='Não'&&A.risco!=='Não';
+ const ok=A.renda!==RENDA[0]&&A.reserva==='Sim'&&A.capital!=='Menos de R$ 20.000'&&A.honor==='Sim'&&A.conta!=='Não'&&A.modelo!=='Não'&&A.risco!=='Não';
  if(CFG.FORM_ENDPOINT){try{await fetch(CFG.FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({...d,...A,aprovado:ok?'SIM':'NÃO',data:new Date().toISOString()})})}catch(e){}}
  box.innerHTML=ok?'<div class="res"><div class="ic">✅</div><h3>Parabéns, '+esc(d.nome.split(' ')[0])+'! Você foi aprovado(a).</h3><p class="note" style="font-size:17px">Entre no grupo do WhatsApp para agendar a sua entrevista. A agenda é limitada.</p><a class="btn" href="'+CFG.WHATS+'" target="_blank" rel="noopener">Entrar no grupo e agendar entrevista</a></div>'
  :'<div class="res"><div class="ic">ℹ️</div><h3>Você não foi aprovado(a) para o projeto Trader Itinerante.</h3><p class="note" style="font-size:17px">Neste momento o seu perfil não atende aos requisitos da imersão presencial, mas você pode escolher outros serviços.</p><a class="btn" href="'+CFG.OUTROS+'" target="_blank" rel="noopener">Ver outros serviços</a></div>';
