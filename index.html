@@ -37,6 +37,7 @@ ul.ck{list-style:none;padding:0;margin:14px 0}ul.ck li{padding:6px 0 6px 30px;po
 .bar{height:6px;background:#ffffff14;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--y),#ff9d00);transition:.4s}
 .step{color:var(--m);font-size:14px;margin:14px 0 6px}.q{font-size:clamp(21px,3.4vw,27px);font-weight:800;line-height:1.25;margin:4px 0 14px}
 .opt{display:block;width:100%;text-align:left;background:#ffffff0a;border:1px solid var(--line);color:var(--t);padding:16px 18px;border-radius:14px;margin:10px 0;font:600 17px Inter,sans-serif;cursor:pointer;transition:.15s}
+.opt.on{border-color:var(--y);background:#ffc80018}.y{color:var(--y)}.bf{background:var(--y);color:#0a0f24;font-weight:900;text-align:center;padding:9px 14px;font-size:15px}
 .opt:hover{border-color:var(--y);background:#ffc8000f;transform:translateX(4px)}
 .note{color:var(--m);font-size:14px;margin:6px 0 12px}
 input[type=text],input[type=tel],input[type=email]{width:100%;background:#ffffff0d;border:1px solid var(--line);color:var(--t);border-radius:12px;padding:15px;font:600 17px Inter,sans-serif;margin:7px 0;outline:0}
@@ -52,7 +53,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--m);font-
 @media(max-width:760px){.about{grid-template-columns:1fr!important}.about img{max-width:none!important;max-height:420px}.two{grid-template-columns:1fr}.mini b{font-size:19px}}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}.inv{margin-bottom:50px}.inv .card{padding:24px;text-align:center}.inv .card span{color:var(--m);font-size:14px}.inv b.v{display:block;color:var(--y);font-size:30px;font-weight:900;line-height:1.15;margin:6px 0}.inv .card p{color:var(--m);font-size:14px;margin:6px 0 0}.chips{text-align:center;margin:18px 0}.chips .pill{margin:4px;color:var(--t)}
 @media(max-width:760px){.three{grid-template-columns:1fr}}
-</style></head><body><div class="bg"></div>
+</style></head><body><div class="bg"></div><div class="bf" id="bf">🔥 Black Friday: 70% de desconto no treinamento online e na mentoria presencial (R$ 7.500) · válido até 24/12</div>
 <div class="w">
 <nav><div class="logo">TRADER<b>ITINERANTE</b></div><a class="btn s" href="#quiz">Fazer avaliação</a></nav>
 <section class="hero">
@@ -66,7 +67,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--m);font-
 <div class="card st"><b>12 anos</b><span>de experiência</span></div><div class="card st"><b>3 dias</b><span>de imersão presencial</span></div>
 <div class="card st"><b>1 a 1</b><span>aula individual</span></div><div class="card st"><b>100%</b><span>conta no seu nome</span></div></section>
 <section class="inv"><div style="text-align:center"><span class="pill">Transparência</span><h2 style="margin-top:16px">Quanto custa participar</h2></div>
-<div class="three"><div class="card"><span>Mentoria presencial</span><b class="v">R$ 25.000</b><p>Aula individual na sua cidade. Turmas (desconto por pessoa): 3 pessoas, 3% · 4 a 11, 7% · acima de 11, 12%.</p></div>
+<div class="three"><div class="card"><span id="cl">Mentoria presencial · Black Friday</span><b class="v" id="cv">R$ 7.500</b><p id="cp"><s>R$ 25.000</s> (70% de desconto). Aula individual na sua cidade, com o indicador que marca as regiões automaticamente. Promoção válida até 24/12, sem descontos adicionais.</p></div>
 <div class="card"><span>Passagem e hospedagem</span><b class="v">03 dias</b><p>Passagem de ida e volta do professor e hospedagem, por sua conta.</p></div>
 <div class="card"><span>Capital próprio, a partir de</span><b class="v">R$ 20.000</b><p>Fica na sua conta, em seu nome. Não é pago a ninguém.</p></div></div>
 <p class="note" style="text-align:center;margin-top:16px">O pagamento é antecipado: a data só é reservada após a confirmação. Remarcação e cancelamento seguem o contrato, assinado antes de qualquer pagamento.</p></section>
@@ -90,7 +91,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--m);font-
 <p class="note" style="text-align:center">Participantes que autorizaram a divulgação do primeiro nome e da cidade.</p></section>
 <footer>Conteúdo educacional. Não é recomendação de investimento nem promessa de resultado. Cada aluno opera a própria conta, sem acesso a senhas ou recursos de terceiros. Operar no mercado financeiro envolve risco de perda do capital.<br>Seus dados são usados apenas para avaliar a sua candidatura (LGPD).</footer></div>
 <script>
-const CFG={VSL_ID:'n9chaS5D964',VSL_VERTICAL:true,FORM_ENDPOINT:'',WHATS:'https://chat.whatsapp.com/JLIcOLGn4I9G5F2bhJT67q',OUTROS:'https://joeltraderfx.github.io/desfrute/'};
+const CFG={VSL_ID:'z8bjT1s8D3s',VSL_VERTICAL:false,FORM_ENDPOINT:'',WHATS:'https://chat.whatsapp.com/JLIcOLGn4I9G5F2bhJT67q',OUTROS:'https://joeltraderfx.github.io/desfrute/'};
 const ROTEIRO=[]; /* cidades reais, ex.: {cidade:'Recife/PE',data:'março'} */
 if(ROTEIRO.length){document.getElementById('rot').hidden=false;document.getElementById('rotl').innerHTML=ROTEIRO.map(r=>'<span class="pill">'+esc(r.cidade)+' · '+esc(r.data)+'</span>').join(' ')}
 const CONFIRMADOS=[]; /* só nomes reais e autorizados: {nome:'Carlos',cidade:'Recife/PE'} */
@@ -98,40 +99,54 @@ if(CFG.VSL_VERTICAL)document.getElementById('vsl').classList.add('v');
 if(CFG.VSL_ID)document.getElementById('vsl').innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+CFG.VSL_ID+'?rel=0" allow="autoplay;encrypted-media;fullscreen" allowfullscreen></iframe>';
 if(CONFIRMADOS.length){document.getElementById('ag').hidden=false;document.getElementById('agl').innerHTML=CONFIRMADOS.map(p=>'<li class="card"><b>'+esc(p.nome)+'</b><span>'+esc(p.cidade)+'</span></li>').join('')}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+const BF=Date.now()<new Date('2026-12-25T00:00:00-03:00').getTime(); /* promoção termina em 24/12 */
+const P='Mentoria presencial';
+const PROD=[
+{id:'Treinamento online',nome:'Treinamento online',sub:'As marcações das regiões são feitas manualmente.',tag:BF?'Black Friday: 70% OFF':'',cta:'Garantir treinamento online',url:'https://payfast.greenn.com.br/c5r7vnk',det:BF?'De R$ 7.990 por <b>R$ 2.397</b>. Promoção até 24/12. No pagamento, digite o cupom <b>Black Friday</b>.':'Valor: <b>R$ 7.990</b>.'},
+{id:P,nome:P,sub:'Inclui o indicador que marca as regiões automaticamente.',tag:BF?'Black Friday: 70% OFF':'',cta:'Pagar mentoria presencial (Black Friday)',url:'https://payfast.greenn.com.br/y93kfcn',det:BF?'De R$ 25.000 por <b>R$ 7.500</b> na Black Friday, até 24/12.':'Valor: <b>R$ 25.000</b>.'},
+{id:'Assinatura 30 dias',nome:'Assinatura de 30 dias',cta:'Assinar por 30 dias',url:'https://payfast.greenn.com.br/69y8w3k',det:''},
+{id:'Assinatura 90 dias',nome:'Assinatura de 90 dias',cta:'Assinar por 90 dias',url:'https://payfast.greenn.com.br/zbz5mad',det:''},
+{id:'Assinatura anual',nome:'Assinatura anual',cta:'Assinar o plano anual',url:'https://payfast.greenn.com.br/uqnhtxg',det:''}];
+if(!BF){document.getElementById('bf').remove();document.getElementById('cl').textContent='Mentoria presencial';document.getElementById('cv').textContent='R$ 25.000';document.getElementById('cp').textContent='Aula individual na sua cidade, com o indicador que marca as regiões automaticamente.'}
 const SN=['Sim','Não'],RENDA=['Abaixo de R$ 10.000','R$ 10.000 a R$ 30.000','R$ 30.000 a R$ 50.000','Acima de R$ 50.000'];
 const Q=[
+{k:'interesse',multi:1},
 {k:'operou',t:'Qual é a sua experiência no mercado financeiro?',o:['Nunca operei','Já operei e já tive perdas','Já operei, sem perdas relevantes','Opero com frequência']},
 {k:'curso',t:'Você já fez algum curso de trading?',o:SN},
 {k:'ramo',t:'Qual é o seu ramo de atividade?',o:['Médico(a)','Advogado(a)','Empresário(a)','Servidor(a) público(a)','Outro']},
-{k:'grupo',t:'Turmas têm desconto por pessoa: 3 pessoas, 3%; de 4 a 11 pessoas, 7%; acima de 11, 12%. Quantas pessoas participariam?',o:['1 ou 2 pessoas','3 pessoas','4 a 11 pessoas','Mais de 11 pessoas']},
-{k:'conta',t:'Para as aulas, você abrirá a conta no seu nome, com a minha orientação. Você está de acordo?',o:['Sim, estou de acordo','Não']},
-{k:'modelo',t:'Não há divisão de lucros nem promessa de ganho: você opera a sua conta e os resultados, bons ou ruins, são seus. Você está de acordo?',o:['Sim, estou de acordo','Não']},
-{k:'risco',t:'O mercado financeiro é de alto risco. Você está ciente de que pode haver perdas e assume esse risco como investidor?',o:['Sim, estou ciente e assumo o risco','Não']},
-{k:'renda',t:'Qual a sua renda média mensal?',o:RENDA},
-{k:'reserva',t:'Você tem condições de pagar, antecipadamente, a passagem de ida e volta do professor e a hospedagem por 03 dias? (Os comprovantes serão pedidos só na entrevista.)',o:SN},
-{k:'honor',t:'O valor da mentoria presencial é de R$ 25.000 por pessoa, com desconto para turmas, e o pagamento é antecipado. Se for aprovado, você tem condições de pagar antecipadamente?',o:SN},
-{k:'capital',t:'Quanto de capital próprio você consegue manter na sua conta, em seu nome, durante as aulas? O ideal é R$ 100.000, mas aceitamos a partir de R$ 20.000.',o:['R$ 100.000 ou mais','R$ 75.000','R$ 50.000','R$ 20.000','Menos de R$ 20.000']}];
-let i=0,A={};const box=document.getElementById('box');
-function head(){return '<div class="bar"><i style="width:'+Math.round(i/(Q.length+1)*100)+'%"></i></div><div class="step">Pergunta '+Math.min(i+1,Q.length)+' de '+Q.length+'</div>'}
+{pres:1,k:'conta',t:'Para as aulas, você abrirá a conta no seu nome, com a minha orientação. Você está de acordo?',o:['Sim, estou de acordo','Não']},
+{pres:1,k:'modelo',t:'Não há divisão de lucros nem promessa de ganho: você opera a sua conta e os resultados, bons ou ruins, são seus. Você está de acordo?',o:['Sim, estou de acordo','Não']},
+{pres:1,k:'risco',t:'O mercado financeiro é de alto risco. Você está ciente de que pode haver perdas e assume esse risco como investidor?',o:['Sim, estou ciente e assumo o risco','Não']},
+{pres:1,k:'renda',t:'Qual a sua renda média mensal?',o:RENDA},
+{pres:1,k:'reserva',t:'Você tem condições de pagar, antecipadamente, a passagem de ida e volta do professor e a hospedagem por 03 dias? (Os comprovantes serão pedidos só na entrevista.)',o:SN},
+{pres:1,k:'honor',t:(BF?'O valor da mentoria presencial é de R$ 7.500 por pessoa na promoção de Black Friday, válida até 24/12 (de R$ 25.000), e o pagamento é antecipado.':'O valor da mentoria presencial é de R$ 25.000 por pessoa, e o pagamento é antecipado.')+' Se for aprovado, você tem condições de pagar antecipadamente?',o:SN},
+{pres:1,k:'capital',t:'Quanto de capital próprio você consegue manter na sua conta, em seu nome, durante as aulas? O ideal é R$ 100.000, mas aceitamos a partir de R$ 20.000.',o:['R$ 100.000 ou mais','R$ 75.000','R$ 50.000','R$ 20.000','Menos de R$ 20.000']}];
+let i=0,A={interesse:[]};const box=document.getElementById('box');
+const QS=()=>Q.filter(q=>!q.pres||A.interesse.includes(P));
+function head(){const n=QS().length;return '<div class="bar"><i style="width:'+Math.round(i/(n+1)*100)+'%"></i></div><div class="step">Pergunta '+Math.min(i+1,n)+' de '+n+'</div>'}
 function back(){return i>0?'<button class="back" onclick="i--;draw()">← Voltar</button>':''}
 function draw(){
- if(i>=Q.length)return form();const q=Q[i];let h=head()+'<div class="q">'+q.t+'</div>';
- if(q.text)h+='<input type="text" id="tx" placeholder="'+q.ph+'" value="'+esc(A[q.k]||'')+'"><button class="btn" style="margin-top:10px" onclick="txt()">Continuar</button>';
- else h+=q.o.map((o,n)=>'<button class="opt" onclick="pick('+n+')">'+o+'</button>').join('');
+ const L=QS();if(i>=L.length)return form();const q=L[i];let h=head();
+ if(q.multi){h+='<div class="q">Qual opção você quer conhecer? Escolha pelo menos uma.</div>'+PROD.map((p,n)=>{const on=A.interesse.includes(p.id);return '<button class="opt'+(on?' on':'')+'" onclick="tog('+n+')">'+(on?'☑ ':'☐ ')+p.nome+(p.tag?' <span class="y">· '+p.tag+'</span>':'')+(p.sub?'<br><small style="color:var(--m);font-weight:400">'+p.sub+'</small>':'')+'</button>'}).join('')+'<button class="btn" style="margin-top:10px" onclick="nx()">Continuar</button><p class="note" id="er2" style="color:#ff8a8a"></p>'}
+ else h+='<div class="q">'+q.t+'</div>'+q.o.map((o,n)=>'<button class="opt" onclick="pick('+n+')">'+o+'</button>').join('');
  box.innerHTML=h+back()}
-function pick(n){A[Q[i].k]=Q[i].o[n];i++;draw()}
-function txt(){const v=document.getElementById('tx').value.trim();if(v.length<3){document.getElementById('tx').focus();return}A[Q[i].k]=v;i++;draw()}
+function tog(n){const id=PROD[n].id,x=A.interesse.indexOf(id);x>-1?A.interesse.splice(x,1):A.interesse.push(id);draw()}
+function nx(){if(!A.interesse.length){document.getElementById('er2').textContent='Escolha pelo menos uma opção para continuar.';return}i++;draw()}
+function pick(n){const q=QS()[i];A[q.k]=q.o[n];i++;draw()}
 function form(){box.innerHTML='<div class="bar"><i style="width:94%"></i></div><div class="step">Último passo</div><div class="q">Preencha o cadastro para a nossa equipe verificar as informações</div>'+
 '<input type="text" id="nm" placeholder="Nome completo" autocomplete="name"><input type="tel" id="tl" placeholder="Telefone com DDD" autocomplete="tel"><input type="email" id="em" placeholder="E-mail" autocomplete="email"><input type="text" id="ci" placeholder="Cidade/UF" autocomplete="address-level2">'+
 '<label class="c"><input type="checkbox" id="lg"> Concordo em compartilhar meus dados para avaliação da candidatura e contato da equipe.</label><button class="btn" style="width:100%" id="fin" onclick="fin()">Finalizar cadastro</button><p class="note" id="er" style="color:#ff8a8a"></p>'+back()}
+function links(list){return list.map(p=>'<div style="margin:10px 0">'+(p.det?'<p class="note" style="margin:0 0 6px">'+p.det+'</p>':'')+'<a class="btn" href="'+p.url+'" target="_blank" rel="noopener">'+p.cta+'</a></div>').join('')}
 async function fin(){
  const g=id=>document.getElementById(id),d={nome:g('nm').value.trim(),telefone:g('tl').value.trim(),email:g('em').value.trim(),cidade:g('ci').value.trim()};
  if(d.nome.length<5||d.telefone.replace(/\D/g,'').length<10||!/^\S+@\S+\.\S+$/.test(d.email)||d.cidade.length<2||!g('lg').checked){g('er').textContent='Preencha todos os campos corretamente e aceite o compartilhamento de dados.';return}
  g('fin').disabled=true;g('fin').textContent='Enviando...';
- const ok=A.renda!==RENDA[0]&&A.reserva==='Sim'&&A.capital!=='Menos de R$ 20.000'&&A.honor==='Sim'&&A.conta!=='Não'&&A.modelo!=='Não'&&A.risco!=='Não';
- if(CFG.FORM_ENDPOINT){try{await fetch(CFG.FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({...d,...A,aprovado:ok?'SIM':'NÃO',data:new Date().toISOString()})})}catch(e){}}
- box.innerHTML=ok?'<div class="res"><div class="ic">✅</div><h3>Parabéns, '+esc(d.nome.split(' ')[0])+'! Você foi aprovado(a).</h3><p class="note" style="font-size:17px">Entre no grupo do WhatsApp para agendar a sua entrevista. A agenda é limitada.</p><a class="btn" href="'+CFG.WHATS+'" target="_blank" rel="noopener">Entrar no grupo e agendar entrevista</a></div>'
- :'<div class="res"><div class="ic">ℹ️</div><h3>Você não foi aprovado(a) para o projeto Trader Itinerante.</h3><p class="note" style="font-size:17px">Neste momento o seu perfil não atende aos requisitos da imersão presencial, mas você pode escolher outros serviços.</p><a class="btn" href="'+CFG.OUTROS+'" target="_blank" rel="noopener">Ver outros serviços</a></div>';
- box.scrollIntoView({behavior:'smooth',block:'center'})}
+ const hp=A.interesse.includes(P),ok=hp?(A.renda!==RENDA[0]&&A.reserva==='Sim'&&A.capital!=='Menos de R$ 20.000'&&A.honor==='Sim'&&A.conta!=='Não'&&A.modelo!=='Não'&&A.risco!=='Não'):null;
+ if(CFG.FORM_ENDPOINT){try{await fetch(CFG.FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({...d,...A,interesse:A.interesse.join(' | '),aprovado_presencial:hp?(ok?'SIM':'NÃO'):'n/a',data:new Date().toISOString()})})}catch(e){}}
+ const nome=esc(d.nome.split(' ')[0]),outros=PROD.filter(p=>A.interesse.includes(p.id)&&p.id!==P),pres=PROD.find(p=>p.id===P);let h;
+ if(hp&&ok)h='<div class="res"><div class="ic">✅</div><h3>Parabéns, '+nome+'! Você foi aprovado(a) para a mentoria presencial.</h3><p class="note" style="font-size:17px">Entre no grupo do WhatsApp para agendar a sua entrevista. A agenda é limitada. Depois da entrevista, finalize pelo link com o desconto de Black Friday.</p><a class="btn" href="'+CFG.WHATS+'" target="_blank" rel="noopener">Entrar no grupo e agendar entrevista</a><div style="margin-top:14px">'+links([pres])+'</div>'+(outros.length?'<p class="note">Você também escolheu:</p>'+links(outros):'')+'</div>';
+ else if(hp)h='<div class="res"><div class="ic">ℹ️</div><h3>Você não foi aprovado(a) para o projeto Trader Itinerante.</h3><p class="note" style="font-size:17px">Neste momento o seu perfil não atende aos requisitos da imersão presencial, mas você pode escolher outros serviços.</p>'+(outros.length?'<p class="note">Estas opções que você escolheu continuam disponíveis:</p>'+links(outros):'')+'<a class="btn g" href="'+CFG.OUTROS+'" target="_blank" rel="noopener">Ver outros serviços</a></div>';
+ else h='<div class="res"><div class="ic">🔥</div><h3>Cadastro recebido, '+nome+'!</h3><p class="note" style="font-size:17px">Finalize a sua escolha pelos links abaixo.</p>'+links(outros)+'</div>';
+ box.innerHTML=h;box.scrollIntoView({behavior:'smooth',block:'center'})}
 draw();
 </script></body></html>
